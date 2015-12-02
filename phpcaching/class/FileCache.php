@@ -1,14 +1,12 @@
 <?php
 
-abstract class CacheAbstract implements IInterface
+class FileCache extends FileCacheAbstract implements IInterface
 {
 
-    // set way to dir where will be cach files
-    protected $_wayToCahe = '';
-    // set extension for cashed files
-    protected $_ext = '.html';
-    // set extension for expire file config
-    protected $_exp = '.exp';
+    public function __construct($wayToCahe)
+    {
+        $this->_wayToCahe = $_SERVER['DOCUMENT_ROOT'] . $wayToCahe;
+    }
 
     /**
      * put cache to file on disk
@@ -28,7 +26,7 @@ abstract class CacheAbstract implements IInterface
         }
         @chmod($this->_wayToCahe . '/' . $key . $this->_ext, 0777);
         if ($expire) {
-            if (!file_put_contents($this->_wayToCahe . '/' . $key . $this->_exp, $expire)) {
+            if (!file_put_contents($this->_wayToCahe . '/' . $key . $this->_exp, time() + $expire)) {
                 return false;
             }
             @chmod($this->_wayToCahe . '/' . $key . $this->_exp, 0777);
@@ -61,17 +59,22 @@ abstract class CacheAbstract implements IInterface
     }
 
     /**
-     * get cache duration for cuurent file (key - it's name)
+     * get remaining cache duration for current file (key - it's name)
      * 
      * @param string $key
      * @return mixed false if something wrong and integer duration if all good
      */
-    public function getExpOfKey($key)
+    public function getRemainigCacheTimeByKey($key)
     {
         if (file_exists($this->_wayToCahe . '/' . $key . $this->_exp)) {
             $expire = file_get_contents($this->_wayToCahe . '/' . $key . $this->_exp);
-            return $expire ? (int) $expire : false;
+            if (!$expire) {
+                return false;
+            }
+            $currentTime = time();
+            return ($expire - $currentTime );
         }
+        return false;
     }
 
 }

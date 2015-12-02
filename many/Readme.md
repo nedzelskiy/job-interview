@@ -27,15 +27,6 @@ foreach ($data as  $idx=>$row) {
 	    unset($data[$dbx])
 }
 ```
-#### #4:
-Написать абстрактный класс кеширования и одну реализацию на базе файлов или sqllite. Интерфейс класса:
-
-```php
-interface I {
-  public function put($key, $value, $expire = null);
-  public function get($key);
-}
-```
 
 ### JavaScript
 
