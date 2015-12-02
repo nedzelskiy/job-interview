@@ -25,7 +25,7 @@ class Config
      * 
      * @param string $name
      * @param object(Closure) $func
-     * @return null
+     * @return void
      */
     public function set($name, $func)
     {
@@ -36,7 +36,7 @@ class Config
      * Get a service params by name
      * 
      * @param string $name
-     * @return array
+     * @return mixed null if don't exist
      */
     public function get($name)
     {

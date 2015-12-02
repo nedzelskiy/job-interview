@@ -58,7 +58,7 @@ class Login
      * set username
      * 
      * @param string $username
-     * @return null
+     * @return void
      */
     public function setUsername($username)
     {
@@ -69,7 +69,7 @@ class Login
      * set passwords
      * 
      * @param string $password
-     * @return null
+     * @return void
      */
     public function setPassword($password)
     {
