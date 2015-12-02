@@ -6,13 +6,13 @@
 
 Написать функцию преобразования строки, содержащей число в непосредственно число, не используя стандартные функции приведения типов (например “1252абв” в 1252)
 
-[Перейти>>](https://github.com/nedzelskiy/job-interview/tree/master/many/php/%231)
+[Перейти >>](https://github.com/nedzelskiy/job-interview/tree/master/many/php/%231)
 
 #### #2:
 
 Написать код приведения даты формата “01/18/2013 01:02:03” к формату “2012-05-01 01:02:03”
 
-[Перейти>>](https://github.com/nedzelskiy/job-interview/tree/master/many/php/%232)
+[Перейти >>](https://github.com/nedzelskiy/job-interview/tree/master/many/php/%232)
 
 #### #3:
 
@@ -32,7 +32,7 @@ foreach ($data as  $idx=>$row) {
 }
 ```
 
-[Перейти>>](https://github.com/nedzelskiy/job-interview/tree/master/many/php/%233)
+[Перейти >>](https://github.com/nedzelskiy/job-interview/tree/master/many/php/%233)
 
 ### JavaScript
 
@@ -56,7 +56,7 @@ foreach ($data as  $idx=>$row) {
     <input type="text" validate='digits' validate-message='Digits only'>
 </div>
 ```
-[Перейти>>](https://github.com/nedzelskiy/job-interview/tree/master/many/js/%231)
+[Перейти >>](https://github.com/nedzelskiy/job-interview/tree/master/many/js/%231)
 
 ### SQL
 
