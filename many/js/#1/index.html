@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Validation</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link href="css.css" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <p>Digits check</p>
+            <input id="first" type="text" validate='digits' validate-message="Digits only!" /> 
+        </div>
+        <div>
+            <p>Email check</p>
+            <input id="second" type="text" validate='email' validate-message='Invalid email' />
+        </div>
+        <div> 
+            <p>Digits check</p>
+            <input type="text" validate='digits' validate-message='Digits only' /> 
+        </div>
+        <div>
+            <p>Max length check</p>
+            <textarea validate='length-max-10' validate-message='Max 10 symbols'></textarea> 
+        </div>
+        <input  type="submit" id="submit" /> 
+        <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js.js"></script>    
+    </body>
+</html>

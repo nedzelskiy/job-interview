@@ -1,0 +1,11 @@
+body{
+    text-align:center;
+}
+#submit{
+    margin-top:25px;
+    width:100px;
+    padding:10px;
+}
+input, textarea{
+    width:200px;
+}
