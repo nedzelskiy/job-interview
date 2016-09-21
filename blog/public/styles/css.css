@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding:0;
+}
+body {
+    max-width: 43.75em;
+    margin: 0 auto;
+    padding: 0 1em 0 1em;
+}
+body, input, textarea {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    line-height: 1.6em;
+    font-weight: 300;
+}
+header {
+    text-align: center;
+}
+header h1 {
+    font-size: 3em;
+}
+h1 {
+    font-family: "franklin-gothic-urw-cond",sans-serif;
+    font-weight: 700;
+    font-size: 1.4em;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: center;
+    width: 90%;
+    margin: 1em auto;
+}
+a{
+    text-decoration: none;
+    outline: 0;
+    border: none;
+    outline: none;
+    color: #000000;
+}
+header h2 {
+    position: relative;
+    font-size: 1em;
+    top: -2.4em;
+}
+h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.4em;
+    line-height: 1.4em;
+    text-align: center;
+    width: 90%;
+    margin: 1em auto;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "blog",
+  "description": "test task for job",
+  "authors": [
+    "Pavel Nedzelskiy"
+  ],
+  "keywords": [
+    "job",
+    "test",
+    "task",
+    "blog"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.0"
+  }
+}
