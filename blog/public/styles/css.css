@@ -3,9 +3,14 @@
     padding:0;
 }
 body {
-    max-width: 43.75em;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 1em 0 1em;
+    line-height: 1.4em;
+    background-color: #f8f8f8;
+    color: #666666;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
 }
 body, input, textarea {
     font-family: 'Open Sans', sans-serif;
@@ -15,6 +20,13 @@ body, input, textarea {
 }
 header {
     text-align: center;
+    position: fixed;
+    background-color: #f8f8f8;
+    top:0;
+    height:180px;
+    width:800px;;
+    margin:0 auto;
+    z-index: 2;
 }
 header h1 {
     font-size: 3em;
@@ -49,4 +61,42 @@ h2, h3, h4, h5, h6 {
     text-align: center;
     width: 90%;
     margin: 1em auto;
+}
+li {
+    list-style: none;
+    position: relative;
+}
+.post-meta {
+    position: relative;
+    text-align: center;
+    width: 90%;
+    margin: 1em auto;
+    top: -1em;
+}
+.meta {
+    font-size: .875em;
+}
+.home img, .search img, .archive img {
+    float: left;
+    max-width: 50%;
+    margin: 0 1em 1em 0;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+    vertical-align: middle;
+}
+.group:after {
+    display: block;
+    height: 0;
+    clear: both;
+    content: ".";
+    visibility: hidden;
+}
+.content{
+    padding-top: 180px;
 }
