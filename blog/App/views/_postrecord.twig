@@ -1,0 +1,10 @@
+<tr class="blog__postrecord">
+    <td class="blog__postrecord-created">{{ post.created }}</td>
+    <td class="blog__postrecord-title">{{ post.title }}</td>
+    <td class="blog__postrecord-description">{{ post.description }}</td>
+    <td class="blog__postrecord-image">
+        <a class="blog__postrecord-image-a" href="{{ path('showPost', {'url':post.url}) }}">
+            <img class="blog__postrecord-image-a-img" src="{{ post.img }}" alt="" />
+        </a>
+    </td>
+</tr>

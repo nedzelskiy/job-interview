@@ -1,0 +1,21 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+    <div class="blog__postlist table-responsive">
+        <table class="blog__postlist-table table table-bordered">
+            <thead>
+                <tr class="blog__postlist-table-head">
+                    <th>Дата публикации</th>
+                    <th>Название записи</th>
+                    <th>Превью записи</th>
+                    <th>Изображение</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                    {% include ('_postrecord.twig') %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

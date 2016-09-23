@@ -58,13 +58,22 @@
 
 
     </style>
-    <link rel="stylesheet" href="styles/css.css" />
+    <link rel="stylesheet" href="/bower_components/tether/dist/css/tether.min.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/styles/css.css" />
 </head>
 <html>
-    <body class="home">
-        {% block header %}
-            {% include '_header.twig' %}
-        {% endblock %}
-        {% block content %}{% endblock %}
+    <body>
+        <div class="blog">
+                {% block header %}
+                    {% include '_header.twig' %}
+                {% endblock %}
+            <div class="blog__content">
+                {% block content %}{% endblock %}
+            </div>
+            <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js" ></script>
+            <script type="text/javascript" src="/bower_components/tether/dist/js/tether.min.js" ></script>
+            <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js" ></script>
+        </div>
     </body>
 </html>

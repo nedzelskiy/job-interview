@@ -5,9 +5,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Silex\Application;
 
 $app->get('/', function() use ($app) {
-    return $app->redirect($app['url_generator']->generate('allrecords'));
+    return $app->redirect($app['url_generator']->generate('showAllPosts'));
 });
 
-$app->get('/blog', function() use ($app) {
-    return $app['twig']->render('allrecords.twig');
-})->bind('allrecords');
+$app->get('/blog', 'BlogController:showAllPosts')->bind('showAllPosts');
+$app->get('/blog/{url}', 'BlogController:showPost')->bind('showPost');
