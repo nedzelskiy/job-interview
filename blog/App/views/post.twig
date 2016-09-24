@@ -4,8 +4,8 @@
 <div class="blog__post">
     <img class="blog__post-img" src="{{ post.img }}" />
     <h2 class="blog__post-h2">{{ post.title }}</h2>
-    <div class="blog__post-created">{{ post.created }}</div>
-    <div class="blog__post-body">{{ post.body }}</div>
+    <div class="blog__post-created">{{ post.created.format('d-m-Y H:i:s') }}</div>
+    <div class="blog__post-text">{{ post.text }}</div>
     <a class="blog__post-showall" href="{{ path('showAllPosts') }}">Перейти ко всем записям</a>
 </div>
 {% endblock %}

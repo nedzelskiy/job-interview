@@ -1,0 +1,12 @@
+@font-face{
+    font-family:franklin-gothic-urw-cond;
+    src:url(https://fonts.typekit.net/af/4bd271/0000000000000000000118b9/27/l?subset_id=2&fvd=n7) format("woff2");
+    font-weight:700;
+    font-style:normal;
+}
+@font-face{
+    font-family:franklin-gothic-urw-cond;
+    src:url(https://fonts.typekit.net/af/a1c24c/0000000000000000000118ba/27/l?subset_id=2&fvd=i7) format("woff2");
+    font-weight:700;
+    font-style:italic;
+}

@@ -1,12 +1,35 @@
 <?php
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Silex\Application;
-
 $app->get('/', function() use ($app) {
     return $app->redirect($app['url_generator']->generate('showAllPosts'));
-});
+})->bind('homePage');
 
-$app->get('/blog', 'BlogController:showAllPosts')->bind('showAllPosts');
-$app->get('/blog/{url}', 'BlogController:showPost')->bind('showPost');
+$admin = $app['controllers_factory'];
+$blog = $app['controllers_factory'];
+$app->mount('/admin', $admin);
+$app->mount('/blog', $blog);
+
+// blog
+$blog->get('/', 'BlogController:showAllPostsAction')->bind('showAllPosts');
+$blog->get('/{url}', 'BlogController:showPostAction')->bind('showPost');
+
+// admin
+$admin->before(function() use($app) {
+    if (!$app['admin']) {
+        Header("WWW-Authenticate: Basic realm=\"Blog\"");
+        return $app->json(['Message' => 'Not Authorised'], 401);
+    }
+    $app['admin'] = true;
+});
+$admin->get('/', function() use ($app) {
+    return $app->redirect($app['url_generator']->generate('showCreatePostForm'));
+})->bind('adminHomePage');
+$admin->get('/post/create', 'AdminController:showCreatePostFormAction')->bind('showCreatePostForm');
+$admin->get('/exit', function() use ($app) {
+    $app['admin'] = false;
+    return $app->abort(401, 'Not Authorised');
+})->bind('adminExit');
+
+$admin->post('/post/create', 'AdminController:createNewPostAction')->bind('createPost');
+
+

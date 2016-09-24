@@ -3,64 +3,12 @@
     <title>Blog, test task</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C600italic%2C300%2C600&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
-    <style type="text/css">
-        .tk-franklin-gothic-urw-cond{
-            font-family:"franklin-gothic-urw-cond",sans-serif;
-        }</style>
-    <style type="text/css">
-        @font-face{
-            font-family:franklin-gothic-urw-cond;
-            src:url(https://fonts.typekit.net/af/4bd271/0000000000000000000118b9/27/l?subset_id=2&fvd=n7) format("woff2");
-            font-weight:700;
-            font-style:normal;
-        }
-        @font-face{
-            font-family:franklin-gothic-urw-cond;
-            src:url(https://fonts.typekit.net/af/a1c24c/0000000000000000000118ba/27/l?subset_id=2&fvd=i7) format("woff2");
-            font-weight:700;
-            font-style:italic;
-        }
-    </style>
-    <style type="text/css">
-        img.wp-smiley,
-        img.emoji {
-            display: inline !important;
-            border: none !important;
-            box-shadow: none !important;
-            height: 1em !important;
-            width: 1em !important;
-            margin: 0 .07em !important;
-            vertical-align: -0.1em !important;
-            background: none !important;
-            padding: 0 !important;
-        }
-        .jam-center {
-            margin: .5em 0 0 0;
-            text-align: center;
-        }
-        .jam-center ul {
-            margin: 0 0 0 0;
-            padding: 0 0 0 0;
-        }
-        .jam-center li {
-            display: inline-block;
-        }
-        .jam-social-share {
-            height: 2em;
-            width: 2em;
-        }
-        .jam-social-share:hover {
-            zoom: 1;
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-
-
-    </style>
-    <link rel="stylesheet" href="/bower_components/tether/dist/css/tether.min.css" />
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/styles/css.css" />
+    <link rel="stylesheet"  href='https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C600italic%2C300%2C600&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+    <link rel="stylesheet" href="/styles/fonts.css" />
+    <link rel="stylesheet" href="/styles/blog.css" />
+    <link rel="stylesheet" href="/styles/media.css" />
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js" ></script>
+    <script type="text/javascript" src="/js/blog.js" ></script>
 </head>
 <html>
     <body>
@@ -71,9 +19,6 @@
             <div class="blog__content">
                 {% block content %}{% endblock %}
             </div>
-            <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js" ></script>
-            <script type="text/javascript" src="/bower_components/tether/dist/js/tether.min.js" ></script>
-            <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js" ></script>
         </div>
     </body>
 </html>

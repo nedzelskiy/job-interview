@@ -1,6 +1,16 @@
 <header class="blog__header">
-    <h1 class="blog__header-h1">
-        <a class="blog__header-h1-a" target="_blank" href="https://github.com/nedzelskiy/job-interview/tree/master/blog/">Simple blog</a>
-    </h1>
-    <h2 class="blog__header-h2">a test task from LabITeam</h2>
+    <div class="blog__header-adminenter">
+        {% if app.admin %}
+            <a href="{{ path('adminExit') }}">Выйти из админ панели</a>
+        {% else %}
+            <a href="{{ path('adminHomePage') }}">Войти в админ панель</a>
+            <p>admin:123</p>
+        {% endif %}
+    </div>
+    <div class="blog__header-logo">
+        <h1 class="blog__header-h1">
+            <a class="blog__header-h1-a" href="{{ path('homePage') }}">Simple blog</a>
+        </h1>
+        <h2 class="blog__header-h2">a test task from <a target="_blank" href="http://labiteam.com/">LabITeam</a></h2>
+    </div>
 </header>

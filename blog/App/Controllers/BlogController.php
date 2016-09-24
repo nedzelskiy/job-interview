@@ -8,7 +8,7 @@ use Models\PostModel;
 class BlogController
 {
 
-    public function showAllPosts(Application $app)
+    public function showAllPostsAction(Application $app)
     {
         $posts = PostModel::all();
         return $app['twig']->render('postslist.twig', [
@@ -16,9 +16,12 @@ class BlogController
         ]);
     }
 
-    public function showPost(Application $app, $url)
+    public function showPostAction(Application $app, $url)
     {
         $post = PostModel::find_by_url($url);
+        if (!$post) {
+            return $app->abort(404);
+        }
         return $app['twig']->render('post.twig', [
             'post' => $post
         ]);

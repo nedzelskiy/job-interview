@@ -1,0 +1,26 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+    <div class="createpost">
+        <h2>Добавление новости</h2>
+        <form action="{{ path('createPost') }}" method="POST" onsubmit="return false;"/>
+            <div class="createpost__title createpost__field">
+                <p>Заголовок</p>
+                <input type="text" class="createpost__title-input" name="title"  />
+            </div>
+            <div class="createpost__img createpost__field">
+                <p>Ссылка на изображение</p>
+                <input class="createpost__img-input" name="img" />
+            </div>
+            <p>Описание</p>
+            <div class="createpost__description createpost__field">
+                <textarea class="createpost__description-textarea" name="description" /></textarea>
+            </div>
+            <p>Полный текст</p>
+            <div class="createpost__text createpost__field">
+                <textarea class="createpost__text-textarea" name="text" /></textarea>
+                <input type="submit" onclick="blog.services.ajaxFormSubmit(this, blog.createPostCallback)" value="Отправить" />
+            </div>
+        </form>
+    </div>
+{% endblock %}

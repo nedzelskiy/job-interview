@@ -2,7 +2,7 @@
 
 return [
     'app' => [
-        'debug' => true,
+        'debug' => false,
         'defaultLanguage' => 'ru',
         'timezone' => 'Europe/Kiev'
     ],
