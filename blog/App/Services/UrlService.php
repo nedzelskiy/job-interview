@@ -4,7 +4,14 @@ namespace Services;
 
 class UrlService
 {
-
+    
+    /**
+     * Преобразует текст в url ключ 
+     * 
+     * @param string $string
+     * @return string
+     * 
+     */
     public static function makeUrlFromSting($string)
     {
         $string = self::translit($string);
@@ -13,7 +20,14 @@ class UrlService
         $string = trim($string, "-");
         return $string;
     }
-
+    
+    /**
+     * Преобразует рус. текст в транслит
+     * 
+     * @param string $string
+     * @return string
+     * 
+     */
     public static function translit($string)
     {
         $converter = [

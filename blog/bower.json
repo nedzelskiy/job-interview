@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "description": "test task for job",
+  "description": "test task for labiteam",
   "authors": [
     "Pavel Nedzelskiy"
   ],
@@ -11,7 +11,6 @@
     "blog"
   ],
   "dependencies": {
-    "bootstrap": "^4.0",
-    "air-datepicker": "^2.2.2"
+    "jquery": "^3.1"
   }
 }

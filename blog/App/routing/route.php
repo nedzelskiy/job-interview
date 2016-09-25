@@ -1,5 +1,7 @@
 <?php
 
+use Symfony\Component\HttpFoundation\Request;
+
 $app->get('/', function() use ($app) {
     return $app->redirect($app['url_generator']->generate('showAllPosts'));
 })->bind('homePage');
@@ -17,14 +19,21 @@ $blog->get('/{url}', 'BlogController:showPostAction')->bind('showPost');
 $admin->before(function() use($app) {
     if (!$app['admin']) {
         Header("WWW-Authenticate: Basic realm=\"Blog\"");
-        return $app->json(['Message' => 'Not Authorised'], 401);
+        $req = Request::createFromGlobals();
+        $server = $req->server;
+        if ($server->get('REQUEST_URI') === $app['url_generator']->generate('adminHomePage')) {
+            $app->abort(401);
+        } else {
+            return $app->json(['Message' => 'Not Authorised'], 401);
+        }
     }
     $app['admin'] = true;
 });
 $admin->get('/', function() use ($app) {
     return $app->redirect($app['url_generator']->generate('showCreatePostForm'));
 })->bind('adminHomePage');
-$admin->get('/post/create', 'AdminController:showCreatePostFormAction')->bind('showCreatePostForm');
+
+$admin->get('/posts/create', 'AdminController:showCreatePostFormAction')->bind('showCreatePostForm');
 $admin->get('/exit', function() use ($app) {
     $app['admin'] = false;
     return $app->abort(401, 'Not Authorised');

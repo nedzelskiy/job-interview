@@ -30,5 +30,11 @@
 сохранением пропорций (т.е. изображение 500*200 должно стать 
 изображением 100*40).
 
+### Установка:
+- в папке sql находится sql-дамп бд
+- в корне проекта выполнить команды:
+- composer.phar install
+- bower i
+
 ### Результат REST API
 ![REST](https://1.bp.blogspot.com/-U_G3t7IXe-c/V-bwsBncPQI/AAAAAAAAAOM/OQ2GItBFr6MNvY32BiQgACXvRAaDG7DQQCEw/s1600/%25D0%2592%25D1%258B%25D0%25B4%25D0%25B5%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5_001.png)

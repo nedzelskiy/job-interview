@@ -7,7 +7,7 @@ return [
         'timezone' => 'Europe/Kiev'
     ],
     'db' => [
-        'cnn_default' => 'mysql://root:silent457@localhost/blog?charset=utf8'
+        'cnn_default' => 'mysql://bloguser:123@localhost/blog?charset=utf8'
     ],
     'views' => [
         'path' => [

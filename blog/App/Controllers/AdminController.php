@@ -8,14 +8,32 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Models\PostModel;
 use Services\UrlService;
 
+/**
+ * Управляет админ панелью
+ * 
+ */
 class AdminController
 {
 
+    /**
+     * Отдает html формы добавления новой новости
+     * 
+     * @param object $app Silex\Application
+     * @return string html
+     */
     public function showCreatePostFormAction(Application $app)
     {
         return $app['twig']->render('createpost.twig');
     }
-    
+
+    /**
+     * Создает новую новость
+     * 
+     * @param object $app Silex\Application
+     * @param object $req Symfony\Component\HttpFoundation\Request
+     * @return object Symfony\Component\HttpFoundation\JsonResponse
+     * 
+     */
     public function createNewPostAction(Application $app, Request $req)
     {
         $model = new PostModel();
@@ -29,12 +47,13 @@ class AdminController
                 return new JsonResponse([
                     'success' => true,
                     'message' => 'Новость успешно добавлена!'
-                ], JsonResponse::HTTP_CREATED);
+                        ], JsonResponse::HTTP_CREATED);
             }
         }
         return new JsonResponse([
             'success' => false,
             'message' => $model->getError()
-        ], JsonResponse::HTTP_OK);
+                ], JsonResponse::HTTP_OK);
     }
+
 }

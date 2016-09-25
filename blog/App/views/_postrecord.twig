@@ -1,7 +1,7 @@
 <div class="row blog__postrecord">
     <div class="col-1 col blog__postrecord-created">{{ post.created.format('d-m-Y H:i:s') }}</div>
     <div class="col-2 col blog__postrecord-title">{{ post.title }}</div>
-    <div class="col-3 col blog__postrecord-description">{{ post.description }}...</div>
+    <div class="col-3 col blog__postrecord-description"><textarea disabled class="blog__postrecord-description-textarea">{{ post.description }}...</textarea></div>
     <div class="col-4 col blog__postrecord-image">
         <a class="blog__postrecord-image-a" href="{{ path('showPost', {'url':post.url}) }}">
             <img class="blog__postrecord-image-a-img" src="{{ post.img }}" alt="" />

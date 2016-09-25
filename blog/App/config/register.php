@@ -2,25 +2,26 @@
 
 use Services\AuthService;
 
-// Config
+// Конфигурация app
 $app['conf'] = $app->share(function () {
     return require_once('config.php');
 });
 
 
-// Debug
+// Дебаг режим ?
 $app['debug'] = $app['conf']['app']['debug'];
 
 
-// Language
+// Язык по умолчанию
+// на данный момент перевод не используется
 $app['lang'] = $app['conf']['app']['defaultLanguage'];
 
 
-// Url generator
+// Url генератор
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
-// admin isset
-$app['admin'] = AuthService::checkAdminLogin();
+// Залогинен ли админ ?
+$app['admin'] = AuthService::checkAdminLogin('admin', '$2y$10$TjQCbaujUUvThdULGx4dSeGUEZl/vO2S.gFWTHop46ae5sOFu8rgG');
 
 // Active Record
 date_default_timezone_set($app['conf']['app']['timezone']);
@@ -32,7 +33,7 @@ $app->register(new Ruckuus\Silex\ActiveRecordServiceProvider(), array(
     'ar.default_connection' => 'default',
 ));
 
-// Validators
+// Symfony валидаторы
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 
 
@@ -50,7 +51,7 @@ $app['BlogController'] = $app->share(function() {
     return new Controllers\BlogController();
 });
 
-//Errors handler
+// Обрадотичк Exception
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug']) {
         return;
@@ -63,12 +64,19 @@ $app->error(function (\Exception $e, $code) use ($app) {
         case 401:
             $message = 'Доступ запрещен!';
             break;
+        
+        case 405:
+            $message = 'Метод не разрешен!';
+            break;
             
         default:
-            $message = 'Мы не знаем что, но что-то случилось!';
+            $message = 'Ой, что-то случилось!';
     }
-    return $app['twig']->render('http.twig', [
-        'code' => $code,
-        'message' => $message
-    ]);
+    if ('GET' === $app['request']->getMethod()) {
+        return $app['twig']->render('http.twig', [
+            'code' => $code,
+            'message' => $message
+        ]);
+    } 
+    return $app->json(['Message' => $message], $code);
 });

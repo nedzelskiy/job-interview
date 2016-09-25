@@ -5,12 +5,35 @@ namespace Services;
 class AuthService
 {
 
-    public static function checkAdminLogin()
+    /**
+     * Проверяет данные из $_SERVER['PHP_AUTH_USER'] и $_SERVER['PHP_AUTH_PW']
+     * на соответсвие переданным
+     * 
+     * @param string $login 
+     * @param string $pass хеш пароля 
+     * @return boolean
+     * 
+     */
+    public static function checkAdminLogin($login, $pass)
     {
-        if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) {
+        if (!self::checkExsistsAuthParam()) {
             return false;
         }
-        if ('admin' !== $_SERVER['PHP_AUTH_USER'] || !password_verify($_SERVER['PHP_AUTH_PW'], '$2y$10$TjQCbaujUUvThdULGx4dSeGUEZl/vO2S.gFWTHop46ae5sOFu8rgG')) {
+        if ($login !== $_SERVER['PHP_AUTH_USER'] || !password_verify($_SERVER['PHP_AUTH_PW'], $pass)) {
+            return false;
+        }
+        return true;
+    }
+    
+    /**
+     * Проверяет существуют ли $_SERVER['PHP_AUTH_USER'] и $_SERVER['PHP_AUTH_PW']
+     * 
+     * @return boolean
+     * 
+     */
+    public static function checkExsistsAuthParam()
+    {
+        if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) {
             return false;
         }
         return true;

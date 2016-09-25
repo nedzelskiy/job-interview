@@ -2,3 +2,4 @@ vendor/
 nbproject/
 node_modules/
 bower_components/
+public/bower_components/
