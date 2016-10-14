@@ -1,6 +1,6 @@
 <?php
 
-class EncryptionService
+final class EncryptionService
 {
 
     private static $_instanse;
