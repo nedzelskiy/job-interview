@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Test task</title>
+    <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+    <form action="upload.php" method="post" enctype="multipart/form-data" onsubmit="return App.upload();">
+        <input type="file" name="img[]" />
+        <input type="file" name="img[]" />
+        <input type="file" name="img[]" />
+        <input type="file" name="img[]" />
+        <input type="file" name="img[]" />
+        <input type="submit">
+    </form>
+    <div class="uploadInfo"><span>Uploaded status: </span><span class="uploadedStatus">Not uploaded yet</span></div>
+    <div class="thumbsArea">
+        <div>
+            <div>Last uploaded</div>
+            <div><span>Status: </span><span class="lastUploadedStatus"></span></div>
+            <ul class="lastUploadedList"></ul>
+        </div>
+        <div class="thumbsMeta">
+            <div>File <span class="thumbsMetaFileName"></span> metadata</div>
+            <div><span>Status: </span><span class="thumbsMetaUploaded"></span></div>
+            <div><span>Title: </span><input type="text" class="meta_title" /></div>
+            <div><span>Description: </span><input type="text" class="meta_description" /></div>
+            <button class="saveMeta">Save metadata</button>
+            <button class="deleteFile">Delete file</button>
+            <button class="closeThumbsMeta">Close</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="js.js"></script>
+</body>
+</html>
