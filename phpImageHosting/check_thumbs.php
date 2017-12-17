@@ -31,7 +31,7 @@ if ($q->get()) {
     $data['isQueueReady'] = true;
 }
 if (file_exists($thumbsDir) && is_dir($thumbsDir)) {
-    $data['thumbsUrls'] = array_values(array_diff(scandir($thumbsDir), ['.', '..']));
+    $data['thumbsUrls'] = array_values(array_diff(scandir($thumbsDir), ['.', '..', '.gitkeep']));
 }
 $data['thumbsDir'] = $thumbsDir;
 sendOkAnswer('ok!', $data);

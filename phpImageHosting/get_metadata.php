@@ -17,7 +17,10 @@ $data = [];
 if (isset($_POST['id']) && trim($_POST['id']) !== '' && file_exists($uploadDir . '/' . $_POST['id'])) {
     $file = $uploadDir . '/' . $_POST['id'];
     if (exif_imagetype($file) !== IMAGETYPE_JPEG) {
-        sendErrorAnswer('Can not extract metadata from this file!', [], 500);
+        sendErrorAnswer('Can not extract metadata from this file!', [
+            'id' => $_POST['id'],
+            'fileName' => $_POST['id']
+        ], 500);
     }
     $iptc = new IPTC($file);
     $data['meta_title'] = $iptc->getValue(IPTC_HEADLINE);

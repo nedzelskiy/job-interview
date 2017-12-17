@@ -126,6 +126,11 @@ App.getMetadataHandler = function() {
             }
             App.htmThumbsMetaUploaded.innerHTML = 'Received';
         } else {
+            if (response.data) {
+                App.htmlDeleteFile.setAttribute('data-id', response.data.id);
+                App.htmlSaveMeta.setAttribute('data-id', response.data.id);
+                App.htmlThumbsMetaFileName.innerHTML = response.data.fileName;
+            }
             var responseText = 'Error';
             if (response && response.error && response.message) {
                 responseText = responseText + "<br />" + response.message;
