@@ -1,0 +1,16 @@
+.ErrorDisplay{
+  min-width: 30%;
+  padding: 10px 40px;
+  margin: auto;
+  border: 1px solid #e45b5b;
+  color: white;
+  background-color: #f96868;
+  border-radius: 10px;
+  text-align: center;
+  transition: 2s;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  opacity: 0;
+}

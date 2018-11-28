@@ -1,0 +1,12 @@
+.ErrorHandler{
+  position: absolute;
+  display: grid;
+  width: 100%;
+  z-index: 1;
+  top: 10px;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}

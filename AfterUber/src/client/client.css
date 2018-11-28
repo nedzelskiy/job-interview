@@ -1,0 +1,155 @@
+#map {
+    height: 100%;
+    z-index: 2;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.controls {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    height: 40px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0 5px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+}
+.controls:focus{
+    border-color: #4d90fe;
+}
+.estimate{
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+.controls-wrapper{
+    position:absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -40%;
+    width: 80%;
+    z-index:3;
+    text-align: center;
+}
+.controls-wrapper input{
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    max-width: 350px;
+    width:300px;
+}
+.btn{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.message-dialog-wrapper{
+    position: absolute;
+    top:10px;
+    left:0;
+    width: 100%;
+    text-align: center;
+    z-index: 99;
+    transition: 1s;
+}
+.message-dialog{
+    transition: 1s;
+    color: white;
+    border-radius: 5px;
+    font-family: Roboto;
+    font-size:16px;
+    min-width: 70%;
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px;
+    background-color: #f1b965;
+}
+.hidden{
+    transition: 1s;
+    opacity: 0;
+    z-index: 0;
+}
+.gm-style-iw span,
+.gm-style-iw strong {
+    display: inline-block;
+    font-size: 15px;
+    margin: 5px 0;
+}
+.overload{
+    position: absolute;
+    display: flex;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    z-index:5;
+    background-color: rgba(255, 255, 255, 0.59);
+}
+.overload.hidden{
+    z-index:0;
+}
+.preloader{
+    margin: auto;
+}
+@media all and (max-width: 920px) {
+    .controls-wrapper{
+        width:90%;
+        margin-left: -45%;
+    }
+}
+@media all and (max-width: 810px) {
+    input.controls{
+        max-width:250px;
+    }
+}
+@media all and (max-width: 730px) {
+    .controls{
+        display:block;
+        margin: 5px;
+    }
+    .controls-wrapper{
+        width:60%;
+        margin-left: -45%;
+    }
+}
+@media all and (max-width: 400px) {
+    .controls-wrapper{
+        width:100%;
+        margin-left:0;
+        left:0;
+    }
+    .controls{
+        font-size: 14px;
+    }
+    input.controls{
+        max-width:200px;
+    }
+    .gm-style-iw span,
+    .gm-style-iw strong {
+        font-size: 14px;
+    }
+    .message-dialog{
+        font-size: 14px;
+    }
+    .preloader{
+        max-width: 300px;
+        height: auto;
+    }
+}

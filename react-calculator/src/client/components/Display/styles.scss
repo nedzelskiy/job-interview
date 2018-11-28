@@ -1,0 +1,122 @@
+.Display{
+  grid-area: display;
+  overflow: hidden;
+  max-width:20em;
+  height: 18vh;
+  padding: 0.7em;
+
+  div{
+    text-align: right;
+    color: white;
+  }
+  .expression{
+    font-size: 2em;
+    overflow: hidden;
+    &:empty:not(:focus):before{
+      content:attr(data-placeholder);
+    }
+    height: 12vh;
+    color: #fff;
+    &.onResult {
+      color: #ffdddd;
+    }
+    &.onChange {
+      transition: 0.1s;
+      transform: scale(1.04);
+    }
+  }
+  .result{
+    transition: font-size 0.4s ease-out;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 1.1em;
+    height: 5vh;
+    color: #ffdddd;
+    &.onResult {
+      font-size: 1.4em;
+      color: #fff;
+    }
+  }
+  .loader-wrapper{
+    text-align: center;
+    position: relative;
+    height: 1em;
+    padding:0;
+    margin:0;
+    &.hidden{
+      opacity:0;
+    }
+  }
+  .loader {
+    text-align: right;
+    font-size: 0.4em;
+    position: relative;
+    width: 4em;
+    height: 1em;
+    top: -1.5em;
+    color: white;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
+  .dot {
+    width: 1em;
+    height: 1em;
+    border-radius: 0.5em;
+    background: white;
+    position: absolute;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+  .dot1, .dot2 {
+    left: 0;
+  }
+  .dot3 { left: 1.5em; }
+  .dot4 { left: 3em; }
+  @keyframes reveal {
+    from { transform: scale(0.001); }
+    to { transform: scale(1); }
+  }
+  @keyframes slide {
+    to { transform: translateX(1.5em) }
+  }
+  .dot1 {
+    animation-name: reveal;
+  }
+  .dot2, .dot3 {
+    animation-name: slide;
+  }
+  .dot4 {
+    animation-name: reveal;
+    animation-direction: reverse; /* thx @HugoGiraudel */
+  }
+}
+
+@media all and (max-height: 500px) {
+  .Display{
+    .expression{
+      font-size: 1.8em;
+      height: 10vh;
+    }
+  }
+}
+
+@media all and (max-height: 400px) {
+  .Display{
+    .expression{
+      font-size: 1.5em;
+    }
+    .result{
+      font-size: 1em;
+    }
+  }
+}
+@media all and (min-height: 900px) {
+  .Display{
+    height: 11.5vh;
+    .expression{
+      height: 6vh;
+    }
+  }
+}

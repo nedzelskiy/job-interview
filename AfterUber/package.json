@@ -1,0 +1,42 @@
+{
+  "name": "AfterUber",
+  "version": "1.0.0",
+  "description": "Test task for Innovecs",
+  "main": "src/build/server/server.js",
+  "scripts": {
+    "prod": "node node_modules/pm2/bin/pm2 start src/build/server/server.js",
+    "dev": "sh ./sh/dev.sh",
+    "build:client": "sh ./sh/build_client.sh",
+    "build:server": "sh ./sh/build_server.sh",
+    "server": "sh ./sh/server.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nedzelskiy/AfterUber.git"
+  },
+  "author": "Pavel Nedzelskiy",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/googlemaps": "^3.30.4",
+    "@types/mime": "^2.0.0",
+    "@types/node": "^8.0.32",
+    "@types/request": "^2.0.12",
+    "@types/webpack": "^3.8.3",
+    "concurrently": "^3.5.1",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "nodemon": "^1.14.6",
+    "ts-loader": "^3.3.0",
+    "tslint": "^5.8.0",
+    "tslint-config-airbnb": "^5.4.2",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "mime": "^2.1.0",
+    "pm2": "^2.7.2",
+    "request": "^2.83.0"
+  }
+}

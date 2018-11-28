@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es5",
+    "watch": true,
+    "outDir": "src/build"
+  },
+  "include": [
+    "src/server/**/*"
+  ]
+}

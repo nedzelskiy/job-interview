@@ -1,0 +1,7 @@
+apps:
+  - script   : src/build/server/server.js
+    instances: 1
+    exec_mode: cluster
+    watch  : true
+    env    :
+      NODE_ENV: production

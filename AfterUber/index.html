@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AfterUber Service</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
+    <link rel="stylesheet" href="/src/client/client.css" />
+</head>
+<body>
+    <div class="controls-wrapper">
+        <input class="addressFrom controls" type="text" placeholder="Enter start address">
+        <input class="addressTo controls" type="text" placeholder="Enter destination address">
+        <button class="estimate controls btn">Estimate</button>
+    </div>
+    <div class="message-dialog-wrapper hidden">
+        <div class="message-dialog"></div>
+    </div>
+    <div class="overload hidden">
+        <img class="preloader" src="/src/assets/preloader.gif" alt=""/>
+    </div>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoPjDqiax0MLRw9aTZQ4p710FoRDC-O0k&libraries&libraries=places&callback=App.init"
+            async defer></script>
+    <script type="text/javascript" src="/src/build/client/client-bundle.js"></script>
+</body>
+</html>

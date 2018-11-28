@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "target": "es5",
+    "module": "commonjs",
+    "allowJs": true,
+    "strictNullChecks": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "@types"
+    ],
+    "lib": [
+      "dom",
+      "es2015",
+      "es5",
+      "es6"
+    ]
+  }
+}
